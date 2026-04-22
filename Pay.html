@@ -203,6 +203,15 @@
                     <!-- HTML element used for structure or content. -->
                     <label for="payment-method">Select Payment Method:</label>
                     <!-- A general container for page elements. -->
+
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="M-Pesa-Till" name="payment-method" value="M-Pesa-Till" checked>
+                        <!-- HTML element used for structure or content. -->
+                        <label for="M-Pesa-Till"><em>M-Pesa Till Number</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                    
                     <div>
                         <!-- Input field for user-entered data. -->
                         <input type="radio" id="bank-card" name="payment-method" value="bank-card" checked>
@@ -245,6 +254,12 @@
                 <!-- Close the current container. -->
                 </div>
 
+
+                <div id="M-Pesa-Till-details" class="form-group">
+                    <label for="Till-number">Till Number: xxxxxx</label>
+                    <input type="text" id="Till-Number" name="Till-Number" placeholder="Enter M-Pesa Code" required>
+                </div>
+                
                 <!-- Bank Cards -->
                 <!-- A general container for page elements. -->
                 <div id="bank-card-details" class="form-group">
