@@ -160,7 +160,7 @@
                 const row = document.createElement('tr');
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                row.innerHTML = `<td>KSh. {item.name}</td><td>KSh. {formatCurrency(item.price)}</td><td>KSh. {item.quantity}</td><td>KSh. {formatCurrency(itemTotal)}</td><td><button class="remove-btn" data-name="KSh. {item.name}">Remove</button></td>`;
+                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td><td><button class="remove-btn" data-name="${item.name}">Remove</button></td>`;
                 body.appendChild(row);
                 row.querySelector('.remove-btn').addEventListener('click', () => {
                     removeFromCart(item.name);
@@ -196,7 +196,7 @@
                 const row = document.createElement('tr');
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                row.innerHTML = `<td>KSh. {item.name}</td><td>KSh. {formatCurrency(item.price)}</td><td>KSh. {item.quantity}</td><td>KSh. {formatCurrency(itemTotal)}</td>`;
+                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td>`;
                 body.appendChild(row);
             });
             totalEl.textContent = formatCurrency(total);
