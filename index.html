@@ -1,0 +1,428 @@
+<!DOCTYPE html> <!-- Declares this page as HTML5. -->
+<html lang="en"> <!-- Root element for an HTML document. -->
+<head> <!-- Head section contains metadata and styles. -->
+    <meta charset="UTF-8"> <!-- Metadata for browser settings and page properties. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Metadata for browser settings and page properties. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Metadata for browser settings and page properties. -->
+    <title>Geel's Boutique Fashion</title> <!-- Page title shown in the browser tab. -->
+
+    <style> /* Start of internal CSS styles. */
+        * { /* Reset some default styles; ensures the page starts with a clean layout on all browsers. */
+            margin: 5px; /* Sets the outer spacing of an element. */
+            padding: 0; /* Sets the inner spacing of an element. */
+            box-sizing: border-box; /* Controls how width and height are calculated for elements. */
+        }
+
+        body { /* Base page styles for the whole document */
+            font-family: Arial, sans-serif; /* Specifies the font used for text. */
+            background-color: whitesmoke; /* Sets the background color. */
+            color: #33333366; /* Sets the text color. */
+            line-height: 1.2; /* Controls the spacing between lines of text. */
+        }
+
+        header { /* Header styles define the top brand area and menu background */
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 0px;
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        header h1 {
+            font-size: 2.5rem; /* Sets the size of the text. */
+        }
+
+        nav { /* Navigation container styling */
+            text-align: center; /* Aligns text horizontally inside an element. */
+            margin-top: 10px; /* Adds space above an element. */
+        }
+
+        nav a { /* Navigation link styling */
+            color: #fff; /* Sets the text color. */
+            margin: 15px; /* Sets the outer spacing of an element. */
+            text-decoration: none; /* Adds decoration such as underline to text. */
+            font-size: 1.2rem; /* Sets the size of the text. */
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Adds decoration such as underline to text. */
+        }
+
+        .hero-section { /* Hero section is the first visual section customers see. It uses a background image and centers the welcome message. */
+            background-image: url('../images/Genter.jpg'); /* Adds a background image to an element. */
+            background-size: cover; /* Controls how the background image is scaled. */
+            background-position: center; /* Sets the starting position of a background image. */
+            height: 400px; /* Sets the height of an element. */
+            display: flex; /* Defines how an element is displayed on the page. */
+            align-items: center; /* Vertically aligns items inside a flex container. */
+            justify-content: center; /* Horizontally aligns items in a flex container. */
+            color: yellow; /* Sets the text color. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        .hero-section h2 {
+            font-size: 2.0rem; /* Sets the size of the text. */
+        }
+
+        .container { /* Container keeps page content aligned and adds padding. */
+            max-width: 1200px; /* Limits the maximum width of an element. */
+            margin: 20px auto; /* Sets the outer spacing of an element. */
+            padding: 0 15px; /* Sets the inner spacing of an element. */
+        }
+
+        .product-grid {
+            display: grid; /* Defines how an element is displayed on the page. */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Defines column sizes for a CSS grid layout. */
+            gap: 20px; /* Defines space between grid or flex items. */
+            margin-top: 20px; /* Adds space above an element. */
+        }
+
+        .product-card {
+            background-color: #fff; /* Sets the background color. */
+            border-radius: 10px; /* Rounds the corners of an element. */
+            overflow: hidden; /* Sets a CSS property for styling. */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow behind an element. */
+        }
+
+        .product-card img {
+            width: 100%; /* Sets the width of an element. */
+            height: 200px; /* Sets the height of an element. */
+            object-fit: cover; /* Controls how an image fits inside its box. */
+        }
+
+        .product-card .product-info {
+            padding: 15px; /* Sets the inner spacing of an element. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem; /* Sets the size of the text. */
+            color: #333; /* Sets the text color. */
+        }
+
+        .product-card p {
+            color: #777; /* Sets the text color. */
+            font-size: 1rem; /* Sets the size of the text. */
+            margin-bottom: 15px; /* Adds space below an element. */
+        }
+
+        .product-card .price {
+            font-size: 1.2rem; /* Sets the size of the text. */
+            color: #ff6f61; /* Sets the text color. */
+            font-weight: bold; /* Sets how bold the text appears. */
+        }
+
+        .hero-section p {
+            margin-top: 15px; /* Adds space above an element. */
+            font-size: 1rem; /* Sets the size of the text. */
+            max-width: 700px; /* Limits the maximum width of an element. */
+            color: #fff; /* Sets the text color. */
+        }
+
+        .hero-button {
+            margin-top: 20px; /* Adds space above an element. */
+            background-color: #fff; /* Sets the background color. */
+            color: #ff6f61; /* Sets the text color. */
+            border: none; /* Defines the border around an element. */
+            padding: 14px 28px; /* Sets the inner spacing of an element. */
+            font-size: 1rem; /* Sets the size of the text. */
+            font-weight: bold; /* Sets how bold the text appears. */
+            border-radius: 30px; /* Rounds the corners of an element. */
+            cursor: pointer; /* Changes the mouse cursor when hovering over an element. */
+            text-decoration: none; /* Adds decoration such as underline to text. */
+            display: inline-block; /* Defines how an element is displayed on the page. */
+        }
+
+        .hero-button:hover {
+            background-color: rgba(255,255,255,0.9); /* Sets the background color. */
+        }
+
+        .banner {
+            background-color: #ffebee; /* Sets the background color. */
+            color: #b71c1c; /* Sets the text color. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+            padding: 15px 20px; /* Sets the inner spacing of an element. */
+            margin-top: 20px; /* Adds space above an element. */
+            border-radius: 10px; /* Rounds the corners of an element. */
+            font-size: 1.05rem; /* Sets the size of the text. */
+            font-weight: 600; /* Sets how bold the text appears. */
+        }
+
+        .section-title {
+            font-size: 2rem; /* Sets the size of the text. */
+            margin-bottom: 15px; /* Adds space below an element. */
+            color: #333; /* Sets the text color. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        .features {
+            display: grid; /* Defines how an element is displayed on the page. */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Defines column sizes for a CSS grid layout. */
+            gap: 20px; /* Defines space between grid or flex items. */
+            margin-top: 20px; /* Adds space above an element. */
+        }
+
+        .feature-card {
+            background-color: #fff; /* Sets the background color. */
+            border-radius: 12px; /* Rounds the corners of an element. */
+            padding: 18px; /* Sets the inner spacing of an element. */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07); /* Adds a shadow behind an element. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem; /* Sets the size of the text. */
+            margin-bottom: 10px; /* Adds space below an element. */
+            color: #ff6f61; /* Sets the text color. */
+        }
+
+        .feature-card p {
+            color: #555; /* Sets the text color. */
+            line-height: 1.5; /* Controls the spacing between lines of text. */
+        }
+
+        .testimonials {
+            display: grid; /* Defines how an element is displayed on the page. */
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Defines column sizes for a CSS grid layout. */
+            gap: 20px; /* Defines space between grid or flex items. */
+            margin-top: 20px; /* Adds space above an element. */
+        }
+
+        .testimonial {
+            background-color: #fff; /* Sets the background color. */
+            padding: 20px; /* Sets the inner spacing of an element. */
+            border-radius: 12px; /* Rounds the corners of an element. */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); /* Adds a shadow behind an element. */
+        }
+
+        .testimonial p {
+            color: #555; /* Sets the text color. */
+            margin-bottom: 12px; /* Adds space below an element. */
+            line-height: 1.6; /* Controls the spacing between lines of text. */
+        }
+
+        .testimonial strong {
+            color: #333; /* Sets the text color. */
+            display: block; /* Defines how an element is displayed on the page. */
+            margin-top: 10px; /* Adds space above an element. */
+        }
+
+        .newsletter {
+            background-color: #fff; /* Sets the background color. */
+            border-radius: 12px; /* Rounds the corners of an element. */
+            padding: 25px; /* Sets the inner spacing of an element. */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); /* Adds a shadow behind an element. */
+            margin-top: 30px; /* Adds space above an element. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+        }
+
+        .newsletter-form {
+            display: flex; /* Defines how an element is displayed on the page. */
+            flex-wrap: wrap; /* Controls whether flex items wrap to the next line. */
+            justify-content: center; /* Horizontally aligns items in a flex container. */
+            gap: 10px; /* Defines space between grid or flex items. */
+            margin-top: 15px; /* Adds space above an element. */
+        }
+
+        .newsletter-form input {
+            flex: 1 1 220px; /* Sets a CSS property for styling. */
+            max-width: 320px; /* Limits the maximum width of an element. */
+            padding: 12px 15px; /* Sets the inner spacing of an element. */
+            border: 1px solid #ccc; /* Defines the border around an element. */
+            border-radius: 6px; /* Rounds the corners of an element. */
+            font-size: 1rem; /* Sets the size of the text. */
+        }
+
+        .newsletter-form button {
+            background-color: #ff6f61; /* Sets the background color. */
+            color: #fff; /* Sets the text color. */
+            border: none; /* Defines the border around an element. */
+            padding: 12px 24px; /* Sets the inner spacing of an element. */
+            font-size: 1rem; /* Sets the size of the text. */
+            border-radius: 6px; /* Rounds the corners of an element. */
+            cursor: pointer; /* Changes the mouse cursor when hovering over an element. */
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e65b55; /* Sets the background color. */
+        }
+
+        .contact-form button {
+            background-color: blueviolet; /* Sets the background color. */
+            color: white; /* Sets the text color. */
+            border: none; /* Defines the border around an element. */
+            padding: 12px 20px; /* Sets the inner spacing of an element. */
+            font-size: 1rem; /* Sets the size of the text. */
+            border-radius: 5px; /* Rounds the corners of an element. */
+            cursor: pointer; /* Changes the mouse cursor when hovering over an element. */
+        }
+
+        .contact-form button:hover {
+            background-color: blueviolet; /* Sets the background color. */
+        }
+
+        footer {
+            background-color: #333; /* Sets the background color. */
+            color: #fff; /* Sets the text color. */
+            text-align: center; /* Aligns text horizontally inside an element. */
+            padding: 5px 0; /* Sets the inner spacing of an element. */
+            margin-top: 30px; /* Adds space above an element. */
+        }
+
+        footer p {
+            font-size: 1rem; /* Sets the size of the text. */
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 1.8rem; /* Sets the size of the text. */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header> <!-- Head section contains metadata and styles. -->
+        <h1>Geel's Boutique Fashion</h1> <!-- Main heading text for a section. -->
+        <nav> <!-- Navigation menu for linking to other pages. -->
+            <a href="index.html">Home</a> <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Shop.html">Shop</a> <!-- Hyperlink that navigates to another page or section. -->
+            <a href="About.html">About</a> <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Contact.html">Contact</a> <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Cart.html">Cart</a> <!-- Hyperlink that navigates to another page or section. -->
+        </nav>
+    </header>
+
+    <section class="hero-section"> <!-- A section groups related content together. -->
+        <div> <!-- A general container for page elements. -->
+            <h2>Maxi's Boutique: Timeless Style, Everyday Confidence</h2> <!-- Secondary heading text. -->
+            <p>Discover the joy of style at Maxi’s Boutique — where every piece is crafted to make you feel beautiful, confident, and excited to return again and again.</p> <!-- Paragraph text for page content. -->
+            <a class="hero-button" href="Shop.html">Shop New Arrivals</a> <!-- Hyperlink that navigates to another page or section. -->
+        </div> <!-- Close the current container. -->
+    </section> <!-- End of this content section. -->
+
+    <div class="container"> <!-- A general container for page elements. -->
+        <div class="banner"> <!-- A general container for page elements. -->
+            Free shipping on orders over Ksh 5,000 + new seasonal arrivals just dropped.
+        </div> <!-- Close the current container. -->
+
+        <section> <!-- A section groups related content together. -->
+            <h2 class="section-title">Featured Favorites</h2> <!-- Secondary heading text. -->
+            <div class="product-grid"> <!-- A general container for page elements. -->
+                <div class="product-card"> <!-- A general container for page elements. -->
+                    <img src="../images/img15.jpg" alt="Best seller dress"> <!-- Image element displayed on the page. -->
+                    <div class="product-info"> <!-- A general container for page elements. -->
+                        <h3>Everyday Chic Dress</h3> <!-- Tertiary heading text. -->
+                        <p>Soft, flattering, and perfect for any occasion.</p> <!-- Paragraph text for page content. -->
+                        <div class="price">Ksh 2,499</div> <!-- Price label for the product. -->
+                    </div> <!-- Close the current container. -->
+                </div> <!-- Close the current container. -->
+                <div class="product-card"> <!-- A general container for page elements. -->
+                    <img src="../images/img10.jpg" alt="Evening top"> <!-- Image element displayed on the page. -->
+                    <div class="product-info"> <!-- A general container for page elements. -->
+                        <h3>Elegant Evening Top</h3> <!-- Tertiary heading text. -->
+                        <p>Rich color and luxe detail for your next night out.</p> <!-- Paragraph text for page content. -->
+                        <div class="price">Ksh 1,499</div> <!-- Price label for the product. -->
+                    </div> <!-- Close the current container. -->
+                </div> <!-- Close the current container. -->
+                <div class="product-card"> <!-- A general container for page elements. -->
+                    <img src="../images/img8.jpg" alt="Accessory set"> <!-- Image element displayed on the page. -->
+                    <div class="product-info"> <!-- A general container for page elements. -->
+                        <h3>Signature Accessory Set</h3> <!-- Tertiary heading text. -->
+                        <p>Complete your look with polished finishing touches.</p> <!-- Paragraph text for page content. -->
+                        <div class="price">Ksh 799</div> <!-- Price label for the product. -->
+                    </div> <!-- Close the current container. -->
+                </div> <!-- Close the current container. -->
+            </div> <!-- Close the current container. -->
+        </section> <!-- End of this content section. -->
+
+        <section> <!-- A section groups related content together. -->
+            <h2 class="section-title">Why Shop With Geel’s</h2> <!-- Secondary heading text. -->
+            <div class="features"> <!-- A general container for page elements. -->
+                <div class="feature-card"> <!-- A general container for page elements. -->
+                    <h3>Quality Pieces</h3> <!-- Tertiary heading text. -->
+                    <p>Every item is selected for craftsmanship and long-lasting style.</p> <!-- Paragraph text for page content. -->
+                </div> <!-- Close the current container. -->
+                <div class="feature-card"> <!-- A general container for page elements. -->
+                    <h3>Fresh Collections</h3> <!-- Tertiary heading text. -->
+                    <p>New arrivals arrive weekly so you always have a reason to come back.</p> <!-- Paragraph text for page content. -->
+                </div> <!-- Close the current container. -->
+                <div class="feature-card"> <!-- A general container for page elements. -->
+                    <h3>Easy Returns</h3> <!-- Tertiary heading text. -->
+                    <p>Enjoy a simple return process when your order isn’t the perfect fit.</p> <!-- Paragraph text for page content. -->
+                </div> <!-- Close the current container. -->
+                <div class="feature-card"> <!-- A general container for page elements. -->
+                    <h3>Fast Delivery</h3> <!-- Tertiary heading text. -->
+                    <p>Reliable shipping to get your favorite looks to you quickly.</p> <!-- Paragraph text for page content. -->
+                </div> <!-- Close the current container. -->
+            </div> <!-- Close the current container. -->
+        </section> <!-- End of this content section. -->
+
+        <section> <!-- A section groups related content together. -->
+            <h2 class="section-title">Customer Love</h2> <!-- Secondary heading text. -->
+            <div class="testimonials"> <!-- A general container for page elements. -->
+                <div class="testimonial"> <!-- A general container for page elements. -->
+                    <p>"I always find something special at Geel’s — the quality is amazing and I feel confident wearing every piece."</p> <!-- Paragraph text for page content. -->
+                    <strong>— Amina, Nairobi</strong> <!-- Testimonial author. -->
+                </div> <!-- Close the current container. -->
+                <div class="testimonial"> <!-- A general container for page elements. -->
+                    <p>"The latest arrivals are stunning, and the delivery was faster than expected. I’m already planning my next purchase!"</p> <!-- Paragraph text for page content. -->
+                    <strong>— Sarah, Mombasa</strong> <!-- Testimonial author. -->
+                </div> <!-- Close the current container. -->
+            </div> <!-- Close the current container. -->
+        </section> <!-- End of this content section. -->
+
+        <section class="newsletter"> <!-- A section groups related content together. -->
+            <h2 class="section-title">Stay in the Loop</h2> <!-- Secondary heading text. -->
+            <p>Join our newsletter for updates on new collections, exclusive offers, and styling tips.</p> <!-- Paragraph text for page content. -->
+            <form class="newsletter-form" action="#" method="post"> <!-- Form element used to collect user input. -->
+                <input type="email" name="email" placeholder="Enter your email" required> <!-- Input field for user-entered data. -->
+                <button type="button">Join Now</button> <!-- Clickable button element. -->
+            </form> <!-- End of the form. -->
+        </section> <!-- End of this content section. -->
+    </div> <!-- Close the current container. -->
+
+    <script>
+        const cartKey = 'boutiqueCart';
+        function getCart() {
+            return JSON.parse(localStorage.getItem(cartKey) || '[]');
+        }
+        function saveCart(cart) {
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+        }
+        function updateCartCount() {
+            const count = getCart().reduce((sum, item) => sum + item.quantity, 0);
+            const counter = document.getElementById('cart-count-display');
+            if (counter) counter.textContent = count;
+        }
+        function addToCart(productName, productPrice) {
+            const cart = getCart();
+            const existing = cart.find(item => item.name === productName);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+            saveCart(cart);
+            updateCartCount();
+            alert(`${productName} has been added to your cart!`);
+        }
+        function attachCartButtons() {
+            document.querySelectorAll('.product-card').forEach(card => {
+                const btn = card.querySelector('.contact-form button');
+                if (!btn || btn.disabled) return;
+                const name = card.querySelector('.product-info h3').textContent.trim();
+                const priceText = card.querySelector('.price').textContent.trim();
+                const price = parseFloat(priceText.replace(/[^0-9.]/g, '')) || 0;
+                btn.addEventListener('click', () => addToCart(name, price));
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+            attachCartButtons();
+        });
+    </script>
+    <footer> <!-- Footer section with copyright and extra info. -->
+        <p>&copy; 2026 Geel's Boutique Store | All Rights Reserved | Powered By Harmony House Technologies.</p> <!-- Paragraph text for page content. -->
+    </footer> <!-- End of the footer section. -->
+</body> <!-- End of the visible page content. -->
+</html> <!-- End of this HTML element. -->

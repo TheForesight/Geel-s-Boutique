@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cart-table th,
+        .cart-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table th {
+            background-color: #333;
+            color: white;
+        }
+        .cart-summary {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .cart-summary h3 {
+            margin-bottom: 10px;
+        }
+        .checkout-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .checkout-btn:hover {
+            background-color: #218838;
+        }
+        .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Geel's Boutique Fashion</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Shop.html">Shop</a>
+            <a href="Pay.html">Pay</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Your Cart</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body"></tbody>
+        </table>
+
+        <div class="cart-summary">
+            <h3>Total: <span id="cart-total">$0</span></h3>
+            <p>Proceed to payment</p>
+            <a href="Pay.html" class="checkout-btn">Checkout</a>
+        </div>
+    </div>
+    <script>
+        const cartKey = 'boutiqueCart';
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem(cartKey) || '[]');
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+        }
+
+        function formatCurrency(value) {
+            return '$' + value.toFixed(2);
+        }
+
+        function removeFromCart(productName) {
+            let cart = getCart();
+            cart = cart.filter(item => item.name !== productName);
+            saveCart(cart);
+            renderCart();
+        }
+        function renderCart() 
+        {
+            const cart = getCart();
+            const body = document.getElementById('cart-body');
+            const totalEl = document.getElementById('cart-total');
+            body.innerHTML = '';
+            if (!cart.length) 
+            {
+                body.innerHTML = '<tr><td colspan="5" style="text-align:center;">Your cart is empty.</td></tr>';
+                totalEl.textContent = '$0';
+                return;
+            }
+            let total = 0;
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td><td><button class="remove-btn" data-name="${item.name}">Remove</button></td>`;
+                body.appendChild(row);
+                row.querySelector('.remove-btn').addEventListener('click', () => {
+                    removeFromCart(item.name);
+                });
+            });
+            totalEl.textContent = formatCurrency(total);
+        }
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+    <footer>
+        <p>&copy; 2026 Geel's Boutique Store | All Rights Reserved | Powered By Harmony House Technologies</p>
+    </footer>
+    <script>
+        const cartKey = 'boutiqueCart';
+        function getCart() {
+            return JSON.parse(localStorage.getItem(cartKey) || '[]');
+        }
+        function formatCurrency(value) {
+            return '$' + value.toFixed(2);
+        }
+        function renderCart() {
+            const cart = getCart();
+            const body = document.getElementById('cart-body');
+            const totalEl = document.getElementById('cart-total');
+            body.innerHTML = '';
+            if (!cart.length) {
+                body.innerHTML = '<tr><td colspan="4" style="text-align:center;">Your cart is empty.</td></tr>';
+                totalEl.textContent = '$0';
+                return;
+            }
+            let total = 0;
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td>`;
+                body.appendChild(row);
+            });
+            totalEl.textContent = formatCurrency(total);
+        }
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+
+</html>

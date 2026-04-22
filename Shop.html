@@ -1,0 +1,856 @@
+<!-- Text content inside the page. -->
+﻿<!DOCTYPE html>
+<!-- Root element for an HTML document. -->
+<html lang="en">
+
+<!-- Head section contains metadata and styles. -->
+<head>
+    <!-- Metadata for browser settings and page properties. -->
+    <meta charset="UTF-8">
+    <!-- Metadata for browser settings and page properties. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title shown in the browser tab. -->
+    <title>Boutique Shop</title>
+    <!-- Start of internal CSS styles. -->
+    <style>
+        /* Reset some default styles */
+        /* This removes default browser spacing and uses consistent sizing. */
+        /* Start of a CSS rule for the selected element. */
+        * {
+            /* Sets the outer spacing of an element. */
+            margin: 0;
+            /* Sets the inner spacing of an element. */
+            padding: 0;
+            /* Controls how width and height are calculated for elements. */
+            box-sizing: border-box;
+        /* End of the current CSS rule. */
+        }
+
+        /* Base body styles for the shop page */
+        /* Start of a CSS rule for the selected element. */
+        body {
+            /* Specifies the font used for text. */
+            font-family: Arial, sans-serif;
+            /* Sets the outer spacing of an element. */
+            margin: 0;
+            /* Sets the inner spacing of an element. */
+            padding: 0;
+            /* Sets the background color. */
+            background-color: #f4f4f4;
+            /* Controls the spacing between lines of text. */
+            line-height: 1.0;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        header {
+            /* Sets the background color. */
+            background-color: #ff6f61;
+            /* Sets the text color. */
+            color: #fff;
+            /* Sets the inner spacing of an element. */
+            padding: 0px;
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        header h1 {
+            /* Sets the size of the text. */
+            font-size: 2.5rem;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        nav {
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+            /* Adds space above an element. */
+            margin-top: 10px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        nav a {
+            /* Sets the text color. */
+            color: #fff;
+            /* Sets the outer spacing of an element. */
+            margin: 0 15px;
+            /* Adds decoration such as underline to text. */
+            text-decoration: none;
+            /* Sets the size of the text. */
+            font-size: 1.2rem;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        nav a:hover {
+            /* Adds decoration such as underline to text. */
+            text-decoration: underline;
+        /* End of the current CSS rule. */
+        }
+
+        /* Hero section at the top of the shop page */
+        /* Start of a CSS rule for the selected element. */
+        .hero-section {
+            /* Adds a background image to an element. */
+            background-image: url('../images/img1.jpg');
+            /* Controls how the background image is scaled. */
+            background-size: cover;
+            /* Sets the starting position of a background image. */
+            background-position: center;
+            /* Sets the height of an element. */
+            height: 400px;
+            /* Defines how an element is displayed on the page. */
+            display: flex;
+            /* Vertically aligns items inside a flex container. */
+            align-items: center;
+            /* Horizontally aligns items in a flex container. */
+            justify-content: center;
+            /* Sets the text color. */
+            color: yellow;
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .hero-section h2 {
+            /* Sets the size of the text. */
+            font-size: 2.0rem;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .container {
+            /* Limits the maximum width of an element. */
+            max-width: 1200px;
+            /* Sets the outer spacing of an element. */
+            margin: 20px auto;
+            /* Sets the inner spacing of an element. */
+            padding: 0 15px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-grid {
+            /* Defines how an element is displayed on the page. */
+            display: grid;
+            /* Defines column sizes for a CSS grid layout. */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            /* Defines space between grid or flex items. */
+            gap: 20px;
+            /* Adds space above an element. */
+            margin-top: 20px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card {
+            /* Sets the background color. */
+            background-color: #fff;
+            /* Rounds the corners of an element. */
+            border-radius: 10px;
+            /* Sets a CSS property for styling. */
+            overflow: hidden;
+            /* Adds a shadow behind an element. */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card img {
+            /* Sets the width of an element. */
+            width: 100%;
+            /* Sets the height of an element. */
+            height: 300px;
+            /* Controls how an image fits inside its box. */
+            object-fit: cover;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card .product-info {
+            /* Sets the inner spacing of an element. */
+            padding: 15px;
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card h3 {
+            /* Sets the size of the text. */
+            font-size: 1.5rem;
+            /* Sets the text color. */
+            color: #333;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card p {
+            /* Sets the text color. */
+            color: #777;
+            /* Sets the size of the text. */
+            font-size: 1rem;
+            /* Adds space below an element. */
+            margin-bottom: 15px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .product-card .price {
+            /* Sets the size of the text. */
+            font-size: 1.2rem;
+            /* Sets the text color. */
+            color: #ff6f61;
+            /* Sets how bold the text appears. */
+            font-weight: bold;
+        /* End of the current CSS rule. */
+        }
+
+
+        /* Start of a CSS rule for the selected element. */
+        .contact-form button {
+            /* Sets the background color. */
+            background-color: blueviolet;
+            /* Sets the text color. */
+            color: white;
+            /* Defines the border around an element. */
+            border: none;
+            /* Sets the inner spacing of an element. */
+            padding: 12px 20px;
+            /* Sets the size of the text. */
+            font-size: 1rem;
+            /* Rounds the corners of an element. */
+            border-radius: 5px;
+            /* Changes the mouse cursor when hovering over an element. */
+            cursor: pointer;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .contact-form button:hover {
+            /* Sets the background color. */
+            background-color: blueviolet;
+        /* End of the current CSS rule. */
+        }
+
+
+
+        /* Start of a CSS rule for the selected element. */
+        footer {
+            /* Sets the background color. */
+            background-color: #333;
+            /* Sets the text color. */
+            color: #fff;
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+            /* Sets the inner spacing of an element. */
+            padding: 20px 0;
+            /* Adds space above an element. */
+            margin-top: 30px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        footer p {
+            /* Sets the size of the text. */
+            font-size: 1rem;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        @media (max-width: 768px) {
+            /* Start of a CSS rule for the selected element. */
+            .hero-section h2 {
+                /* Sets the size of the text. */
+                font-size: 1.8rem;
+            /* End of the current CSS rule. */
+            }
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        #cart {
+            /* Defines how an element is positioned on the page. */
+            position: fixed;
+            /* Sets the vertical position of a positioned element. */
+            top: 20px;
+            /* Sets the horizontal position of a positioned element. */
+            right: 20px;
+            /* Sets the background color. */
+            background-color: #333;
+            /* Sets the text color. */
+            color: white;
+            /* Sets the inner spacing of an element. */
+            padding: 10px 20px;
+            /* Rounds the corners of an element. */
+            border-radius: 5px;
+            /* Changes the mouse cursor when hovering over an element. */
+            cursor: pointer;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        #cart-count {
+            /* Sets the background color. */
+            background-color: red;
+            /* Sets the text color. */
+            color: white;
+            /* Rounds the corners of an element. */
+            border-radius: 50%;
+            /* Sets the inner spacing of an element. */
+            padding: 5px 10px;
+            /* Sets the size of the text. */
+            font-size: 14px;
+            /* Sets a CSS property for styling. */
+            margin-left: 10px;
+        /* End of the current CSS rule. */
+        }
+    /* Sets a CSS property for styling. */
+    </style>
+
+<!-- End of the head section. -->
+</head>
+
+<!-- Start of the visible page content. -->
+<body>
+    <!-- Head section contains metadata and styles. -->
+    <header>
+        <!-- Main shop page header with navigation links -->
+        <!-- Main heading text for a section. -->
+        <h1>Geel's Boutique Fashion</h1>
+        <!-- Navigation menu for linking to other pages. -->
+        <nav>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="index.html">Home</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Shop.html">Shop</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="About.html">About</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Contact.html">Contact</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Cart.html">Cart</a>
+        <!-- End of the navigation menu. -->
+        </nav>
+    <!-- End of the head section. -->
+    </header>
+<!--<p><br>Find your favourite outfit just at Geel’s Boutique!</p>-->
+    <!-- A general container for page elements. -->
+    <div class="container">
+        <!-- Container holds the available items and cart summary -->
+        <!-- Secondary heading text. -->
+        <h2>Our Items</h2>
+        <!-- Hyperlink that navigates to another page or section. -->
+        <a href="Cart.html" id="cart">Cart <span id="cart-count">0</span></a>
+
+        <!-- Product grid displays each item available for purchase -->
+        <!-- A general container for page elements. -->
+        <div class="product-grid">
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/Genter.jpg" alt="Product 1">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>CEO</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Genter</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">Unpurchasable</div>
+
+
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" disabled style="opacity:0.6;cursor:not-allowed;">Unavailable</button>
+                    <!-- Close the current container. -->
+                    </div>
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img1.jpg" alt="Product 1">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>CTO</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Edy</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">Unpurchasable</div>
+
+
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" disabled style="opacity:0.6;cursor:not-allowed;">Unavailable</button>
+                    <!-- Close the current container. -->
+                    </div>
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img2.jpg" alt="Product 2">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Crop Tops</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 300</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Crop Tops', 100)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img3.jpg" alt="Product 3">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Lingerie</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Lightweight and breezy for sunny days</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 150</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Lingerie', 150)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img4.jpg" alt="Product 4">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Bodysuits</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Chic and practical for every outing</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Bodysuits', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img5.jpg" alt="Product 5">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Swimming bodysuits</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for swimming wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Swimming bodysuits', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img6.jpg" alt="Product 6">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Fishnet Stockings</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Fishnet Stockings', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img7.jpg" alt="Product 7">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Bikini</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Bikini', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img8.jpg" alt="Product 8">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Lace Thong</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 100</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Lace Thong', 100)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img9.jpg" alt="Product 9">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Thong</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 100</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Thong', 100)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img10.jpg" alt="Product 10">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Crop Tops</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 100</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Leather Jacket', 100)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img11.jpg" alt="Product 11">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Night Dress</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for night wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 150</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Night Dress', 150)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img12.jpg" alt="Product 12">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Flat footwear</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Best for summerr</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Flat footwear', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img13.jpg" alt="Product 13">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Analog Watches</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Keeps you in time</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 350</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Analog Watches', 350)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img14.jpg" alt="Product 14">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Necklace</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 55</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Necklace', 55)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img15.jpg" alt="Product 15">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Bodycone Shaper (size 8)</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 300</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Bodycone Shaper (size 8)', 300)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img16.jpg" alt="Product 16">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Gym/Swimsuites</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for swimming</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 200</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Gym/Swimsuites', 200)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+
+            <!-- A general container for page elements. -->
+            <div class="product-card">
+                <!-- Image element displayed on the page. -->
+                <img src="../images/img17.jpg" alt="Product 17">
+                <!-- A general container for page elements. -->
+                <div class="product-info">
+                    <!-- Tertiary heading text. -->
+                    <h3>Bra</h3>
+                    <!-- Paragraph text for page content. -->
+                    <p>Perfect for everyday wear</p>
+                    <!-- A general container for page elements. -->
+                    <div class="price">KSh. 100</div>
+                    <!-- A general container for page elements. -->
+                    <div class="contact-form">
+                        <!-- Clickable button element. -->
+                        <button type="button" onclick="addToCart('Bra', 100)">Add to Cart</button>
+                    <!-- Close the current container. -->
+                    </div>
+
+                <!-- Close the current container. -->
+                </div>
+            <!-- Close the current container. -->
+            </div>
+
+        <!-- Close the current container. -->
+        </div>
+    <!-- Close the current container. -->
+    </div>
+
+        <!-- Begin JavaScript code or external script include. -->
+            <script>
+        const cartKey = 'boutiqueCart';
+        function getCart() {
+            return JSON.parse(localStorage.getItem(cartKey) || '[]');
+        }
+        function saveCart(cart) {
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+        }
+        function updateCartCount() {
+            const count = getCart().reduce((sum, item) => sum + item.quantity, 0);
+            const counter = document.getElementById('cart-count');
+            if (counter) counter.textContent = count;
+        }
+        function addToCart(productName, productPrice) {
+            const cart = getCart();
+            const existing = cart.find(item => item.name === productName);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+            saveCart(cart);
+            updateCartCount();
+            alert(`${productName} has been added to your cart!`);
+        }
+        function attachCartButtons() {
+            document.querySelectorAll('.product-card .contact-form button').forEach(btn => {
+                if (!btn || btn.disabled) return;
+                const card = btn.closest('.product-card');
+                const name = card.querySelector('.product-info h3').textContent.trim();
+                const priceText = card.querySelector('.price').textContent.trim();
+                const price = parseFloat(priceText.replace(/[^0-9.]/g, '')) || 0;
+                if (!btn.onclick) {
+                    btn.addEventListener('click', () => addToCart(name, price));
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+            attachCartButtons();
+        });
+    </script>
+    <!-- Footer section with copyright and extra info. -->
+    <footer>
+        <!-- Paragraph text for page content. -->
+        <p>&copy; 2026 Maxi's boutique Shop. All rights reserved.</p>
+    <!-- End of the footer section. -->
+    </footer>
+<!-- End of the visible page content. -->
+</body>
+
+<!-- End of this HTML element. -->
+</html>

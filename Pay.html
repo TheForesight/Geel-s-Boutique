@@ -1,0 +1,509 @@
+<!-- Declares this page as HTML5. -->
+<!DOCTYPE html>
+<!-- Root element for an HTML document. -->
+<html lang="en">
+
+<!-- Head section contains metadata and styles. -->
+<head>
+    <!-- Metadata for browser settings and page properties. -->
+    <meta charset="UTF-8">
+    <!-- Metadata for browser settings and page properties. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title shown in the browser tab. -->
+    <title>Payment Options</title>
+    <!-- Start of internal CSS styles. -->
+    <style>
+        /* Start of a CSS rule for the selected element. */
+        body {
+            /* Specifies the font used for text. */
+            font-family: Arial, sans-serif;
+            /* Sets the background color. */
+            background-color: #f9f9f9;
+            /* Sets the outer spacing of an element. */
+            margin: 0;
+            /* Sets the inner spacing of an element. */
+            padding: 0;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        header {
+            /* Sets the background color. */
+            background-color: #333;
+            /* Sets the text color. */
+            color: white;
+            /* Sets the inner spacing of an element. */
+            padding: 15px;
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+        /* End of the current CSS rule. */
+        }
+                nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .container {
+            /* Sets the width of an element. */
+            width: 50%;
+            /* Sets the outer spacing of an element. */
+            margin: 20px auto;
+            /* Sets the background color. */
+            background-color: white;
+            /* Sets the inner spacing of an element. */
+            padding: 20px;
+            /* Rounds the corners of an element. */
+            border-radius: 8px;
+            /* Adds a shadow behind an element. */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .container h2 {
+            /* Aligns text horizontally inside an element. */
+            text-align: center;
+            /* Adds space below an element. */
+            margin-bottom: 20px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .payment-method {
+            /* Adds space below an element. */
+            margin-bottom: 20px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .payment-method label {
+            /* Defines how an element is displayed on the page. */
+            display: block;
+            /* Adds space below an element. */
+            margin-bottom: 5px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Sets a CSS property for styling. */
+        .payment-method select,
+        /* Start of a CSS rule for the selected element. */
+        .payment-method input[type="text"] {
+            /* Sets the width of an element. */
+            width: 100%;
+            /* Sets the inner spacing of an element. */
+            padding: 10px;
+            /* Defines the border around an element. */
+            border: 1px solid #ccc;
+            /* Rounds the corners of an element. */
+            border-radius: 4px;
+            /* Sets the size of the text. */
+            font-size: 16px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .payment-method input[type="radio"] {
+            /* Sets a CSS property for styling. */
+            margin-right: 10px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .form-group {
+            /* Adds space below an element. */
+            margin-bottom: 20px;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .form-group button {
+            /* Sets the background color. */
+            background-color: #28a745;
+            /* Sets the text color. */
+            color: white;
+            /* Sets the inner spacing of an element. */
+            padding: 12px 20px;
+            /* Defines the border around an element. */
+            border: none;
+            /* Sets the size of the text. */
+            font-size: 16px;
+            /* Changes the mouse cursor when hovering over an element. */
+            cursor: pointer;
+            /* Sets the width of an element. */
+            width: 100%;
+        /* End of the current CSS rule. */
+        }
+
+        /* Start of a CSS rule for the selected element. */
+        .form-group button:hover {
+            /* Sets the background color. */
+            background-color: #218838;
+        /* End of the current CSS rule. */
+        }
+    /* Sets a CSS property for styling. */
+    </style>
+<!-- End of the head section. -->
+</head>
+
+<!-- Start of the visible page content. -->
+<body>
+
+    <!-- Head section contains metadata and styles. -->
+    <header>
+        <!-- Payment page header and navigation -->
+        <!-- Main heading text for a section. -->
+        <h1>Geel's Boutique Fashion</h1>
+        <!-- Navigation menu for linking to other pages. -->
+        <nav>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="index.html">Home</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Shop.html">Shop</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Cart.html">Cart</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="About.html">About</a>
+            <!-- Hyperlink that navigates to another page or section. -->
+            <a href="Contact.html">Contact</a>
+        <!-- End of the navigation menu. -->
+        </nav>
+    <!-- End of the head section. -->
+    </header>
+
+        <!-- A general container for page elements. -->
+        <div class="container">
+            <!-- Payment form container for checkout details -->
+            <!-- Secondary heading text. -->
+            <h2>Complete Your Payment</h2>
+            <!-- Form element used to collect user input. -->
+            <form action="#" method="POST" id="payment-form">
+                <!-- A general container for page elements. -->
+                <div class="form-group">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="payment-amount">Amount (KES):</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="number" id="payment-amount" name="payment-amount" placeholder="Enter amount to pay" min="1" required>
+                <!-- Close the current container. -->
+                </div>
+                <!-- A general container for page elements. -->
+                <div class="payment-method">
+                    <!-- Radio buttons let the customer choose which payment method to use -->
+                    <!-- HTML element used for structure or content. -->
+                    <label for="payment-method">Select Payment Method:</label>
+                    <!-- A general container for page elements. -->
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="bank-card" name="payment-method" value="bank-card" checked>
+                        <!-- HTML element used for structure or content. -->
+                        <label for="bank-card"><em>Bank Cards (Visa, Mastercard, etc.)</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                    <!-- A general container for page elements. -->
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="mpesa" name="payment-method" value="mpesa">
+                        <!-- HTML element used for structure or content. -->
+                        <label for="mpesa"><em>M-Pesa</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                    <!-- A general container for page elements. -->
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="airtel-money" name="payment-method" value="airtel-money">
+                        <!-- HTML element used for structure or content. -->
+                        <label for="airtel-money"><em>Airtel Money</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                    <!-- A general container for page elements. -->
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="paypal" name="payment-method" value="paypal">
+                        <!-- HTML element used for structure or content. -->
+                        <label for="paypal"><em>PayPal</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                    <!-- A general container for page elements. -->
+                    <div>
+                        <!-- Input field for user-entered data. -->
+                        <input type="radio" id="cryptocurrency" name="payment-method" value="cryptocurrency">
+                        <!-- HTML element used for structure or content. -->
+                        <label for="cryptocurrency"><em>Cryptocurrency (Bitcoin, etc.)</em></label>
+                    <!-- Close the current container. -->
+                    </div>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- Bank Cards -->
+                <!-- A general container for page elements. -->
+                <div id="bank-card-details" class="form-group">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="card-number">Card Number:</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="text" id="card-number" name="card-number" placeholder="Enter card number" required>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- M-Pesa contact details shown only when the M-Pesa option is selected -->
+                <!-- A general container for page elements. -->
+                <div id="mpesa-details" class="form-group" style="display:none;">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="mpesa-phone">M-Pesa Phone Number:</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="text" id="mpesa-phone" name="mpesa-phone" placeholder="Enter your M-Pesa phone number" required>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- Airtel Money -->
+                <!-- A general container for page elements. -->
+                <div id="airtel-details" class="form-group" style="display:none;">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="airtel-phone">Airtel Money Phone Number:</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="text" id="airtel-phone" name="airtel-phone" placeholder="Enter your Airtel Money phone number" required>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- PayPal -->
+                <!-- A general container for page elements. -->
+                <div id="paypal-details" class="form-group" style="display:none;">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="paypal-email">PayPal Email:</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="text" id="paypal-email" name="paypal-email" placeholder="Enter your PayPal email" required>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- Cryptocurrency -->
+                <!-- A general container for page elements. -->
+                <div id="crypto-details" class="form-group" style="display:none;">
+                    <!-- HTML element used for structure or content. -->
+                    <label for="crypto-wallet">Cryptocurrency Wallet Address:</label>
+                    <!-- Input field for user-entered data. -->
+                    <input type="text" id="crypto-wallet" name="crypto-wallet" placeholder="Enter your wallet address" required>
+                <!-- Close the current container. -->
+                </div>
+
+                <!-- A general container for page elements. -->
+                <div class="form-group">
+                    <!-- Clickable button element. -->
+                    <button type="submit">Pay Now</button>
+                <!-- Close the current container. -->
+                </div>
+            <!-- End of the form. -->
+            </form>
+        <!-- Close the current container. -->
+        </div>
+
+        <!-- Begin JavaScript code or external script include. -->
+        <script>
+            // Find the radio buttons that let the user choose a payment method.
+            // Declares a constant variable that cannot be reassigned.
+            const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
+
+            // JavaScript code that controls page behavior.
+            paymentMethods.forEach((method) => {
+                // Listens for user or document events.
+                method.addEventListener('change', (event) => {
+                    // JavaScript code that controls page behavior.
+                    showPaymentMethodDetails(event.target.value);
+                // End of the current code block.
+                });
+            // End of the current code block.
+            });
+
+            // Show the right payment fields depending on which method the customer selects.
+            // Defines a reusable function.
+            function showPaymentMethodDetails(method) {
+                // Declares a constant variable that cannot be reassigned.
+                const bankCardDetails = document.getElementById('bank-card-details');
+                // Declares a constant variable that cannot be reassigned.
+                const mpesaDetails = document.getElementById('mpesa-details');
+                // Declares a constant variable that cannot be reassigned.
+                const airtelDetails = document.getElementById('airtel-details');
+                // Declares a constant variable that cannot be reassigned.
+                const paypalDetails = document.getElementById('paypal-details');
+                // Declares a constant variable that cannot be reassigned.
+                const cryptoDetails = document.getElementById('crypto-details');
+
+                // Hide all payment method details first
+                // JavaScript code that controls page behavior.
+                bankCardDetails.style.display = 'none';
+                // JavaScript code that controls page behavior.
+                mpesaDetails.style.display = 'none';
+                // JavaScript code that controls page behavior.
+                airtelDetails.style.display = 'none';
+                // JavaScript code that controls page behavior.
+                paypalDetails.style.display = 'none';
+                // JavaScript code that controls page behavior.
+                cryptoDetails.style.display = 'none';
+
+                // Show relevant payment method details
+                // Runs code only when a condition is true.
+                if (method === 'bank-card') {
+                    // JavaScript code that controls page behavior.
+                    bankCardDetails.style.display = 'block';
+                // Runs code only when a condition is true.
+                } else if (method === 'mpesa') {
+                    // JavaScript code that controls page behavior.
+                    mpesaDetails.style.display = 'block';
+                // Runs code only when a condition is true.
+                } else if (method === 'airtel-money') {
+                    // JavaScript code that controls page behavior.
+                    airtelDetails.style.display = 'block';
+                // Runs code only when a condition is true.
+                } else if (method === 'paypal') {
+                    // JavaScript code that controls page behavior.
+                    paypalDetails.style.display = 'block';
+                // Runs code only when a condition is true.
+                } else if (method === 'cryptocurrency') {
+                    // JavaScript code that controls page behavior.
+                    cryptoDetails.style.display = 'block';
+                // End of the current code block.
+                }
+            // End of the current code block.
+            }
+
+            // Initialize default method view
+            // JavaScript code that controls page behavior.
+            showPaymentMethodDetails('bank-card');
+
+            // Handle the form submission and route the request to the selected payment method.
+            // Defines a reusable function.
+            async function submitPayment(event) {
+                // JavaScript code that controls page behavior.
+                event.preventDefault();
+                // Declares a constant variable that cannot be reassigned.
+                const method = document.querySelector('input[name="payment-method"]:checked').value;
+                // Declares a constant variable that cannot be reassigned.
+                const amount = parseFloat(document.getElementById('payment-amount').value);
+
+                // Runs code only when a condition is true.
+                if (!amount || amount <= 0) {
+                    // JavaScript code that controls page behavior.
+                    alert('Enter a valid amount before paying.');
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+
+                // Runs code only when a condition is true.
+                if (method === 'mpesa') {
+                    // Declares a constant variable that cannot be reassigned.
+                    const phone = document.getElementById('mpesa-phone').value.trim();
+                    // Runs code only when a condition is true.
+                    if (!phone) {
+                        // JavaScript code that controls page behavior.
+                        alert('Enter your M-Pesa phone number to receive the STK Push.');
+                        // Returns a value from a function.
+                        return;
+                    // End of the current code block.
+                    }
+
+                    // Starts a block where errors are handled.
+                    try {
+                        // Declares a constant variable that cannot be reassigned.
+                        const response = await fetch('/stk-push', {
+                            // JavaScript code that controls page behavior.
+                            method: 'POST',
+                            // JavaScript code that controls page behavior.
+                            headers: { 'Content-Type': 'application/json' },
+                            // Runs code only when a condition is true.
+                            body: JSON.stringify({
+                                // JavaScript code that controls page behavior.
+                                phone,
+                                // JavaScript code that controls page behavior.
+                                amount,
+                                // JavaScript code that controls page behavior.
+                                accountReference: 'BoutiqueOrder',
+                                // JavaScript code that controls page behavior.
+                                transactionDesc: 'Boutique purchase'
+                            // End of the current code block.
+                            })
+                        // End of the current code block.
+                        });
+
+                        // Declares a constant variable that cannot be reassigned.
+                        const data = await response.json();
+                        // Runs code only when a condition is true.
+                        if (response.ok && data.ResponseCode === '0') {
+                            // Declares a variable with block scope.
+                            alert('STK Push sent. Please complete payment on your phone.');
+                        // Runs code when the previous condition is false.
+                        } else {
+                            // Runs code only when a condition is true.
+                            alert('Failed to send STK Push. ' + (data.errorMessage || JSON.stringify(data)));
+                        // End of the current code block.
+                        }
+                    // Handles errors thrown in the try block.
+                    } catch (error) {
+                        // JavaScript code that controls page behavior.
+                        alert('Unable to reach the payment server. Make sure the backend is running.');
+                        // JavaScript code that controls page behavior.
+                        console.error(error);
+                    // End of the current code block.
+                    }
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+
+                // Runs code only when a condition is true.
+                if (method === 'airtel-money') {
+                    // JavaScript code that controls page behavior.
+                    alert('Airtel Money payment support is not configured yet. Use M-Pesa for STK Push.');
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+
+                // Runs code only when a condition is true.
+                if (method === 'paypal') {
+                    // JavaScript code that controls page behavior.
+                    alert('PayPal is not configured yet. Use M-Pesa for the real payment flow.');
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+
+                // Runs code only when a condition is true.
+                if (method === 'bank-card') {
+                    // JavaScript code that controls page behavior.
+                    alert('Bank card payment is not configured yet. Use M-Pesa for the real payment flow.');
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+
+                // Runs code only when a condition is true.
+                if (method === 'cryptocurrency') {
+                    // JavaScript code that controls page behavior.
+                    alert('Cryptocurrency payment is not configured yet. Use M-Pesa for the real payment flow.');
+                    // Returns a value from a function.
+                    return;
+                // End of the current code block.
+                }
+            // End of the current code block.
+            }
+
+            // Refers to the HTML page DOM in JavaScript.
+            document.getElementById('payment-form').addEventListener('submit', submitPayment);
+        // JavaScript code that controls page behavior.
+        </script>
+
+<!-- End of the visible page content. -->
+</body>
+
+<!-- End of this HTML element. -->
+</html>

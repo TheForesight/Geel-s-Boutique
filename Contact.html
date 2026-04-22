@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - Boutique Fashion</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.0;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 0px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .contact-info div {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .contact-info div:last-child {
+            margin-right: 0;
+        }
+
+        .contact-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #e85d4f;
+        }
+
+        .map-container {
+            margin-top: 50px;
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
+
+            .contact-info div {
+                margin-bottom: 20px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Contact page header with site navigation -->
+        <h1>Geel's Boutique Fashion</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Shop.html">Shop</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Cart.html">Cart</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <!-- Page content container for the contact page -->
+        <h2>Contact Us</h2>
+
+        <!-- Contact information section with address, phone, and email -->
+        <div class="contact-info">
+            <div>
+                <h4>Our Address</h4>
+                <p>Geel's Shop, Moi University-Annex Campus</p>
+            </div>
+
+            <div>
+                <h4>Phone</h4>
+                <p>+254-743-171-242</p>
+                <p>Genter Julius</p>
+            </div>
+
+            <div>
+                <h4>Email</h4>
+                <p>genterjulius2020@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <!-- Simple contact form for visitor messages -->
+            <h4>Send Us a Message</h4>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="map-container">
+            <!-- Map area to show a location for physical store visits -->
+            <h3>Visit Us</h3>
+            <!-- Embed Google Map of moi university annex campus -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1776885411343!6m8!1m7!1sMPjvj-rhsTuNmIs3bOEfjg!2m2!1d0.480786108708!2d35.30185536818862!3f70.91250525338587!4f-12.93437365535874!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2026 Geel's Boutique Store | All Rights Reserved | Powered By Harmony House Technologies.</p>
+    </footer>
+
+</body>
+
+</html>
