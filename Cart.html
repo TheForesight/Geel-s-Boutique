@@ -117,7 +117,7 @@
         </table>
 
         <div class="cart-summary">
-            <h3>Total: <span id="cart-total">$0</span></h3>
+            <h3>Total: <span id="cart-total">KSh. 0</span></h3>
             <p>Proceed to payment</p>
             <a href="Pay.html" class="checkout-btn">Checkout</a>
         </div>
@@ -134,7 +134,7 @@
         }
 
         function formatCurrency(value) {
-            return '$' + value.toFixed(2);
+            return 'KSh. ' + value.toFixed(2);
         }
 
         function removeFromCart(productName) {
@@ -152,7 +152,7 @@
             if (!cart.length) 
             {
                 body.innerHTML = '<tr><td colspan="5" style="text-align:center;">Your cart is empty.</td></tr>';
-                totalEl.textContent = '$0';
+                totalEl.textContent = 'KSh. 0';
                 return;
             }
             let total = 0;
@@ -160,7 +160,7 @@
                 const row = document.createElement('tr');
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td><td><button class="remove-btn" data-name="${item.name}">Remove</button></td>`;
+                row.innerHTML = `<td>KSh. {item.name}</td><td>KSh. {formatCurrency(item.price)}</td><td>KSh. {item.quantity}</td><td>KSh. {formatCurrency(itemTotal)}</td><td><button class="remove-btn" data-name="KSh. {item.name}">Remove</button></td>`;
                 body.appendChild(row);
                 row.querySelector('.remove-btn').addEventListener('click', () => {
                     removeFromCart(item.name);
@@ -179,7 +179,7 @@
             return JSON.parse(localStorage.getItem(cartKey) || '[]');
         }
         function formatCurrency(value) {
-            return '$' + value.toFixed(2);
+            return 'KSh. ' + value.toFixed(2);
         }
         function renderCart() {
             const cart = getCart();
@@ -188,7 +188,7 @@
             body.innerHTML = '';
             if (!cart.length) {
                 body.innerHTML = '<tr><td colspan="4" style="text-align:center;">Your cart is empty.</td></tr>';
-                totalEl.textContent = '$0';
+                totalEl.textContent = 'KSh. 0';
                 return;
             }
             let total = 0;
@@ -196,7 +196,7 @@
                 const row = document.createElement('tr');
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                row.innerHTML = `<td>${item.name}</td><td>${formatCurrency(item.price)}</td><td>${item.quantity}</td><td>${formatCurrency(itemTotal)}</td>`;
+                row.innerHTML = `<td>KSh. {item.name}</td><td>KSh. {formatCurrency(item.price)}</td><td>KSh. {item.quantity}</td><td>KSh. {formatCurrency(itemTotal)}</td>`;
                 body.appendChild(row);
             });
             totalEl.textContent = formatCurrency(total);
