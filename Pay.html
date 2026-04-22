@@ -342,6 +342,7 @@
             // Defines a reusable function.
             function showPaymentMethodDetails(method) {
                 // Declares a constant variable that cannot be reassigned.
+                const MPesaTilldetails = document.getElementById('M-Pesa-Till-details');
                 const bankCardDetails = document.getElementById('bank-card-details');
                 // Declares a constant variable that cannot be reassigned.
                 const mpesaDetails = document.getElementById('mpesa-details');
@@ -354,6 +355,7 @@
 
                 // Hide all payment method details first
                 // JavaScript code that controls page behavior.
+                MPesaTilldetails.style.display = 'none';                
                 bankCardDetails.style.display = 'none';
                 // JavaScript code that controls page behavior.
                 mpesaDetails.style.display = 'none';
@@ -366,11 +368,16 @@
 
                 // Show relevant payment method details
                 // Runs code only when a condition is true.
-                if (method === 'bank-card') {
+                if (method === 'M-Pesa-Till') {
+                    // JavaScript code that controls page behavior.
+                    MPesaTilldetails.style.display = 'block';
+                // Runs code only when a condition is true.
+                } 
+                else if (method === 'bank-card') {
                     // JavaScript code that controls page behavior.
                     bankCardDetails.style.display = 'block';
                 // Runs code only when a condition is true.
-                } else if (method === 'mpesa') {
+                }else if (method === 'mpesa') {
                     // JavaScript code that controls page behavior.
                     mpesaDetails.style.display = 'block';
                 // Runs code only when a condition is true.
